@@ -20,7 +20,7 @@ AS=as
 
 # Macros
 CND_PLATFORM=GNU-Linux-x86
-CND_CONF=Release
+CND_CONF=Release_32
 CND_DISTDIR=dist
 
 # Include project Makefile
@@ -34,7 +34,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/main.o
 
 # C Compiler Flags
-CFLAGS=
+CFLAGS=-m32
 
 # CC Compiler Flags
 CCFLAGS=
@@ -44,18 +44,18 @@ CXXFLAGS=
 FFLAGS=
 
 # Assembler Flags
-ASFLAGS=
+ASFLAGS=--32
 
 # Link Libraries and Options
 LDLIBSOPTIONS=-L/usr/lib -lusb -lhid
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	${MAKE}  -f nbproject/Makefile-Release.mk dist/Release/GNU-Linux-x86/mmf_drawer
+	${MAKE}  -f nbproject/Makefile-Release_32.mk dist/Release_32/GNU-Linux-x86/mmf-drawer
 
-dist/Release/GNU-Linux-x86/mmf_drawer: ${OBJECTFILES}
-	${MKDIR} -p dist/Release/GNU-Linux-x86
-	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/mmf_drawer ${OBJECTFILES} ${LDLIBSOPTIONS} 
+dist/Release_32/GNU-Linux-x86/mmf-drawer: ${OBJECTFILES}
+	${MKDIR} -p dist/Release_32/GNU-Linux-x86
+	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/mmf-drawer ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
 ${OBJECTDIR}/main.o: nbproject/Makefile-${CND_CONF}.mk main.c 
 	${MKDIR} -p ${OBJECTDIR}
@@ -67,8 +67,8 @@ ${OBJECTDIR}/main.o: nbproject/Makefile-${CND_CONF}.mk main.c
 
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
-	${RM} -r build/Release
-	${RM} dist/Release/GNU-Linux-x86/mmf_drawer
+	${RM} -r build/Release_32
+	${RM} dist/Release_32/GNU-Linux-x86/mmf-drawer
 
 # Subprojects
 .clean-subprojects:

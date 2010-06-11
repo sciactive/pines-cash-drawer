@@ -20,7 +20,7 @@ AS=as
 
 # Macros
 CND_PLATFORM=GNU-Linux-x86
-CND_CONF=Debug
+CND_CONF=Release_64
 CND_DISTDIR=dist
 
 # Include project Makefile
@@ -34,7 +34,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/main.o
 
 # C Compiler Flags
-CFLAGS=
+CFLAGS=-m64
 
 # CC Compiler Flags
 CCFLAGS=
@@ -44,31 +44,31 @@ CXXFLAGS=
 FFLAGS=
 
 # Assembler Flags
-ASFLAGS=
+ASFLAGS=--64
 
 # Link Libraries and Options
 LDLIBSOPTIONS=-L/usr/lib -lusb -lhid
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	${MAKE}  -f nbproject/Makefile-Debug.mk dist/Debug/GNU-Linux-x86/mmf-drawer
+	${MAKE}  -f nbproject/Makefile-Release_64.mk dist/Release_64/GNU-Linux-x86/mmf-drawer
 
-dist/Debug/GNU-Linux-x86/mmf-drawer: ${OBJECTFILES}
-	${MKDIR} -p dist/Debug/GNU-Linux-x86
+dist/Release_64/GNU-Linux-x86/mmf-drawer: ${OBJECTFILES}
+	${MKDIR} -p dist/Release_64/GNU-Linux-x86
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/mmf-drawer ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
 ${OBJECTDIR}/main.o: nbproject/Makefile-${CND_CONF}.mk main.c 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.c) -g -Wall -I/usr/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.c
+	$(COMPILE.c) -O2 -I/usr/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.c
 
 # Subprojects
 .build-subprojects:
 
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
-	${RM} -r build/Debug
-	${RM} dist/Debug/GNU-Linux-x86/mmf-drawer
+	${RM} -r build/Release_64
+	${RM} dist/Release_64/GNU-Linux-x86/mmf-drawer
 
 # Subprojects
 .clean-subprojects:

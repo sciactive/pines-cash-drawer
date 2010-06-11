@@ -46,7 +46,7 @@
         </linkerTool>
       </compileType>
     </conf>
-    <conf name="Release" type="1">
+    <conf name="Release_32" type="1">
       <toolsSet>
         <developmentServer>localhost</developmentServer>
         <compilerSet>GNU|GNU</compilerSet>
@@ -55,6 +55,38 @@
       <compileType>
         <cTool>
           <developmentMode>5</developmentMode>
+          <architecture>1</architecture>
+          <incDir>
+            <pElem>/usr/include</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <linkerTool>
+          <linkerAddLib>
+            <pElem>/usr/lib</pElem>
+          </linkerAddLib>
+          <linkerLibItems>
+            <linkerLibLibItem>usb</linkerLibLibItem>
+            <linkerLibLibItem>hid</linkerLibLibItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+    </conf>
+    <conf name="Release_64" type="1">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <compilerSet>GNU|GNU</compilerSet>
+        <platform>2</platform>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+          <architecture>2</architecture>
           <incDir>
             <pElem>/usr/include</pElem>
           </incDir>
